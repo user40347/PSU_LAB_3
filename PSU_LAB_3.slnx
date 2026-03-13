@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PSU_LAB_3.2/PSU_LAB_3.2.fsproj" Id="2e9f88dd-d979-4da0-b531-b12b135bf24e" />
+  <Project Path="PSU_LAB_3.3/PSU_LAB_3.3.fsproj" Id="8f0116ab-5dfa-4fdc-a1ac-4cab4066a3d9" />
+  <Project Path="PSU_LAB_3/PSU_LAB_3.fsproj" />
+  <Project Path="Shared/Shared.fsproj" />
+</Solution>
