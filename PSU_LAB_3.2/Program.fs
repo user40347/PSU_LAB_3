@@ -21,8 +21,6 @@ let countOfMatches list target =
 [<EntryPoint>]
 let main argv =
     let items = Seq.empty<float>
-    let TryAddToSeq (sequment)= 
-        (items |> Seq.insertAt 0 (ReadFloat("Введите число: ")))
     let n = (ReadPositiveInt("Введите количество чисел. \n"))
     let selectmethod = ReadSelectedMethod()
     let resultSeq = (FillSeq items n selectmethod)

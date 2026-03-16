@@ -30,7 +30,6 @@ let rec GetCatalog s =
 let Main argv =
     printf "Введите путь к каталогу: "
     let rootDir = GetCatalog "Введите путь к каталогу: "
-    // Итерация по ленивой последовательности и вывод путей
     AllTextFiles rootDir
     |> Seq.iter (printfn "%s")
     0
