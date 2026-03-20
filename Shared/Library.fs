@@ -5,52 +5,52 @@ open System
 module InputControl =
 
         // Проверка вводимого целого числа
-    let rec ReadInt (prompt: string) =
+    let rec readInt (prompt: string) =
         printf "%s" prompt
         match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите целое число."
-            ReadInt prompt
+            readInt prompt
         | s ->
             match System.Int32.TryParse s with
             | true, v -> v
             | _ ->
                 printfn 
                     "Ошибка: некорректный формат целого числа."
-                ReadInt prompt
+                readInt prompt
 
     // Проверка вводимого вещественного числа
-    let rec ReadFloat (prompt: string) =
+    let rec readFloat (prompt: string) =
         printf "%s" prompt
         match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите число."
-            ReadFloat prompt
+            readFloat prompt
         | s ->
             match System.Double.TryParse s with
             | true, v -> v
             | _ ->
                 printfn "Ошибка: некорректный формат числа."
-                ReadFloat prompt
+                readFloat prompt
 
     // Обработка вводимого положительного целого числа
-    let rec ReadPositiveInt (prompt: string) =
+    let rec readPositiveInt (prompt: string) =
         printf "%s" prompt
         match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите целое число."
-            ReadPositiveInt prompt
+            readPositiveInt prompt
         | s ->
             match System.Int32.TryParse s with
             | true, v when v > 0 -> v
             | _ ->
                 printfn "Ошибка: введите число > 0."
-                ReadPositiveInt prompt
+                readPositiveInt prompt
 
 
 module Sequence =
         // Выбор метода заполнения списка
-    let rec ReadSelectedMethod () =
+    let rec readSelectedMethod () =
         printfn "Выберите способ заполнения:
     1) С клавиатуры
     2) Путем заполнения случайными числами"
@@ -59,23 +59,23 @@ module Sequence =
         | "1" | "2" as method -> method
         | _ ->
             printfn "Такого метода нет. Попробуйте снова."
-            ReadSelectedMethod ()
+            readSelectedMethod ()
 
 
-    let rec FillSeq sequment n selectmethod=
+    let rec fillSeq sequment n selectmethod=
         if n <= 0 then
             printfn "Текущий список: %A" sequment
             sequment 
         else
             if (selectmethod = "1") then
-                FillSeq (
+                fillSeq (
                     (sequment |> Seq.insertAt 0 (
-                        InputControl.ReadFloat(
+                        InputControl.readFloat(
                             "Введите число \n"
                         )))) (n - 1) selectmethod
             else if (selectmethod = "2") then
                 let rnd = Random()
-                FillSeq (
+                fillSeq (
                     sequment |> Seq.insertAt 0 (
                         float(
                             rnd.Next(

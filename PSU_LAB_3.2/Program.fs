@@ -9,7 +9,7 @@ let rec takeFirst (x:float) =
     else 
         takeFirst (float (x / 10))
 
-let CountOfMatches list target = 
+let countOfMatches list target = 
     list |> Seq.fold (
         fun acc x -> if x = target then 
                                     acc + 1 
@@ -21,12 +21,12 @@ let CountOfMatches list target =
 [<EntryPoint>]
 let main argv =
     let items = Seq.empty<float>
-    let n = ReadPositiveInt "Введите количество чисел. \n"
-    let selectmethod = ReadSelectedMethod()
-    let resultSeq = FillSeq items n selectmethod
-    let compnum = ReadFloat "Введите число для подсчета: "
+    let n = readPositiveInt "Введите количество чисел. \n"
+    let selectmethod = readSelectedMethod()
+    let resultSeq = fillSeq items n selectmethod
+    let compnum = readFloat "Введите число для подсчета: "
     printfn "Количество чисел %f в списке: %d" 
         compnum (
-            CountOfMatches resultSeq compnum
+            countOfMatches resultSeq compnum
         )
     0
