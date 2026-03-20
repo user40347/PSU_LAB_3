@@ -21,10 +21,10 @@ let CountOfMatches list target =
 [<EntryPoint>]
 let main argv =
     let items = Seq.empty<float>
-    let n = ReadPositiveInt ("Введите количество чисел. \n")
+    let n = ReadPositiveInt "Введите количество чисел. \n"
     let selectmethod = ReadSelectedMethod()
     let resultSeq = FillSeq items n selectmethod
-    let compnum = ReadFloat ("Введите число для подсчета: ")
+    let compnum = ReadFloat "Введите число для подсчета: "
     printfn "Количество чисел %f в списке: %d" 
         compnum (
             CountOfMatches resultSeq compnum

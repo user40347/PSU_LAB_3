@@ -7,12 +7,12 @@ module InputControl =
         // Проверка вводимого целого числа
     let rec ReadInt (prompt: string) =
         printf "%s" prompt
-        match System.Console.ReadLine() with
+        match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите целое число."
             ReadInt prompt
         | s ->
-            match System.Int32.TryParse(s) with
+            match System.Int32.TryParse s with
             | true, v -> v
             | _ ->
                 printfn 
@@ -22,12 +22,12 @@ module InputControl =
     // Проверка вводимого вещественного числа
     let rec ReadFloat (prompt: string) =
         printf "%s" prompt
-        match System.Console.ReadLine() with
+        match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите число."
             ReadFloat prompt
         | s ->
-            match System.Double.TryParse(s) with
+            match System.Double.TryParse s with
             | true, v -> v
             | _ ->
                 printfn "Ошибка: некорректный формат числа."
@@ -36,12 +36,12 @@ module InputControl =
     // Обработка вводимого положительного целого числа
     let rec ReadPositiveInt (prompt: string) =
         printf "%s" prompt
-        match System.Console.ReadLine() with
+        match System.Console.ReadLine () with
         | null | "" ->
             printfn "Ошибка: введите целое число."
             ReadPositiveInt prompt
         | s ->
-            match System.Int32.TryParse(s) with
+            match System.Int32.TryParse s with
             | true, v when v > 0 -> v
             | _ ->
                 printfn "Ошибка: введите число > 0."
@@ -55,7 +55,7 @@ module Sequence =
     1) С клавиатуры
     2) Путем заполнения случайными числами"
 
-        match Console.ReadLine() with
+        match Console.ReadLine () with
         | "1" | "2" as method -> method
         | _ ->
             printfn "Такого метода нет. Попробуйте снова."

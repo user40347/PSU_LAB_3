@@ -15,7 +15,8 @@
 5) При помощи Seq.map применяем функцию для получения первой цифры числа (takeFirst), результат записываем в resultSeq
 6) Выводим новую, полученную последовательность
 ### Тестирование
-
+<img width="761" height="798" alt="image" src="https://github.com/user40347/PSU_LAB_3/blob/master/Снимок%20экрана%202026-03-15%20232351.png"/>
+<img width="761" height="798" alt="image" src="https://github.com/user40347/PSU_LAB_3/blob/master/Снимок%20экрана%202026-03-15%20233430.png"/>
 
 ## Задача 2
 
@@ -33,7 +34,8 @@
 6) Передаем в countOfMatches Seq и compnum для нахождения в Seq количества чисел compnum. В countOfMatches используется Seq.fold для подсчета количества чисел соответствующих target (compnum). Полученный результат сохраняем в matches
 7) Выводим количество чисел в последовательности, соответствующих заданному
 ### Тестирование
-
+<img width="761" height="798" alt="image" src="https://github.com/user40347/PSU_LAB_3/blob/master/Снимок%20экрана%202026-03-15%20233607.png"/>
+<img width="761" height="798" alt="image" src="https://github.com/user40347/PSU_LAB_3/blob/master/Снимок%20экрана%202026-03-15%20233700.png"/>
 
 ## Задача 3
 ### Текст задачи
@@ -43,4 +45,4 @@
 2)  Проверяем существование данного каталога с помощью Directory.Exists
 3)  С помощью метода allTextFiles рекурсивно проходим по каталогу, указанному ранее, и каждому его подкаталогу. Если встречаем файлы формата txt - выводим путь к ним
 ### Тестирование
-
+<img width="761" height="798" alt="image" src="https://github.com/user40347/PSU_LAB_3/blob/master/Снимок%20экрана%202026-03-15%20234150.png"/>

@@ -30,7 +30,7 @@ let PrintSeq sequence=
         if Seq.length (sequence) <> 0 then
             sequence |> Seq.iter (printfn"%s")
         else
-            printf("В каталоге и подкаталогах нет файлов с расширением .txt")
+            printf "В каталоге и подкаталогах нет файлов с расширением .txt"
 
 [<EntryPoint>]
 let main argv =
