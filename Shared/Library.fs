@@ -13,7 +13,7 @@ module InputControl =
             ReadInt prompt
         | s ->
             match System.Int32.TryParse(s) with
-            | (true, v) -> v
+            | true, v -> v
             | _ ->
                 printfn 
                     "Ошибка: некорректный формат целого числа."
@@ -28,7 +28,7 @@ module InputControl =
             ReadFloat prompt
         | s ->
             match System.Double.TryParse(s) with
-            | (true, v) -> v
+            | true, v -> v
             | _ ->
                 printfn "Ошибка: некорректный формат числа."
                 ReadFloat prompt
@@ -42,7 +42,7 @@ module InputControl =
             ReadPositiveInt prompt
         | s ->
             match System.Int32.TryParse(s) with
-            | (true, v) when v > 0 -> v
+            | true, v when v > 0 -> v
             | _ ->
                 printfn "Ошибка: введите число > 0."
                 ReadPositiveInt prompt
@@ -68,11 +68,11 @@ module Sequence =
             sequment 
         else
             if (selectmethod = "1") then
-                (FillSeq (
+                FillSeq (
                     (sequment |> Seq.insertAt 0 (
                         InputControl.ReadFloat(
                             "Введите число \n"
-                        )))) (n - 1) selectmethod)
+                        )))) (n - 1) selectmethod
             else if (selectmethod = "2") then
                 let rnd = Random()
                 FillSeq (

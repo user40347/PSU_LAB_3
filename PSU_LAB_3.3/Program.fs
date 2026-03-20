@@ -13,7 +13,7 @@ let rec AllTextFiles (directory: string) : seq<string> =
                                 SearchOption.TopDirectoryOnly)
         // Рекурсивно спускаемся в каждый подкаталог
         for subdir in 
-            Directory.EnumerateDirectories(directory) do
+            Directory.EnumerateDirectories (directory) do
             yield! 
                 AllTextFiles subdir
     }
@@ -26,10 +26,16 @@ let rec GetCatalog s =
         else
             rootDir
 
+let PrintSeq sequence=
+        if Seq.length (sequence) <> 0 then
+            sequence |> Seq.iter (printfn"%s")
+        else
+            printf("В каталоге и подкаталогах нет файлов с расширением .txt")
+
 [<EntryPoint>]
-let Main argv =
+let main argv =
     printf "Введите путь к каталогу: "
     let rootDir = GetCatalog "Введите путь к каталогу: "
-    AllTextFiles rootDir
-    |> Seq.iter (printfn "%s")
+    let res = AllTextFiles rootDir
+    PrintSeq res
     0
